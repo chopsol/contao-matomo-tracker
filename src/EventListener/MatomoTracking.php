@@ -86,7 +86,10 @@ class MatomoTracking {
 		// der Session-ID generieren können verwende ich eine MD5 Summe der Session-ID und
 		// kürze diese auf 16 Stellen.
 		if (!isset($sessionData['comatrackVisitorId'])) {
-			$this->session->set('comatrackVisitorId',substr(md5($this->session->getId()), 0, 16));
+			$GLOBALS['comatrackVistorId'] = substr(md5($this->session->getId()), 0, 16);
+			$this->session->set('comatrackVisitorId',$GLOBALS['comatrackVistorId']);
+		} else {
+			$GLOBALS['comatrackVistorId'] = $sessionData['comatrackVisitorId'];
 		}
 
 		// Bot-Erkennung - Bots sollen nicht getrackt werden
@@ -185,9 +188,10 @@ class MatomoTracking {
 		// damit keine Details des Trackings im Logfiles des Servers verbleiben
 		$matomoTracker->enableBulkTracking();
 
-
-		$sessionData = $this->session->all();
-		$matomoTracker->setVisitorId($sessionData['comatrackVisitorId']);
+		// Besucher-ID setzen
+		if ($GLOBALS['comatrackVistorId']) {
+			$matomoTracker->setVisitorId($GLOBALS['comatrackVistorId']);
+		}
 
 		// Die aufgerufene URL bereitstellen
 		$matomoTracker->setUrl(\Environment::get('uri'));
