@@ -2,7 +2,7 @@
 	"name": "chopsol/contao-matomo-tracker",
 	"description": "Contao 4 Hintergrund-Tracking mit Matomo",
 	"keywords":["contao","bundle","matomo","tracking"],
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "contao-bundle",
 	"homepage": "https://www.chop.de/",
 	"license": "LGPL-3.0-or-later",
