@@ -1,0 +1,49 @@
+{
+	"name": "chopsol/contao-matomo-tracker",
+	"description": "Contao 4 Hintergrund-Tracking mit Matomo",
+	"keywords":["contao","bundle","matomo","tracking"],
+	"version": "1.0.0",
+	"type": "contao-bundle",
+	"homepage": "https://www.chop.de/",
+	"license": "LGPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Joachim Nickel",
+			"homepage": "https://github.com/chopsol",
+			"role":"Developer"
+		}
+	],
+	"require": {
+		"php": "^7.2",
+		"contao/core-bundle": "^4.9",
+		"bugbuster/contao-botdetection-bundle":"^1.5",
+		"matomo/matomo-php-tracker": "^2.0"
+	},
+	"conflict": {
+		"contao/manager-plugin": "<2.0 || >=3.0"
+	},
+	"require-dev": {
+		"contao/manager-plugin": "^2.0",
+		"contao/php-cs-fixer": "^2.0"
+	},
+	"extra": {
+		"contao-manager-plugin": "Chopsol\\ContaoMatomoTracker\\ContaoManager\\Plugin"
+	},
+	"autoload": {
+		"psr-4": {
+			"Chopsol\\ContaoMatomoTracker\\": "src/"
+		},
+		"classmap": [
+			"src/Resources/contao/"
+		],
+		"exclude-from-classmap": [
+			"src/Resources/contao/config/",
+			"src/Resources/contao/dca/",
+			"src/Resources/contao/languages/"
+		]
+	},
+	"support": {
+		"issues": "https://github.com/chopsol/contao-matomo-tracker/issues",
+		"source": "https://github.com/chopsol/contao-matomo-tracker"
+	}
+}
