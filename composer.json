@@ -14,7 +14,7 @@
 		}
 	],
 	"require": {
-		"php": "^7.2",
+		"php": ">=7.2",
 		"contao/core-bundle": "^4.9",
 		"bugbuster/contao-botdetection-bundle":"^1.5.3",
 		"jaybizzle/crawler-detect": "^1.2",
