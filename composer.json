@@ -2,7 +2,6 @@
 	"name": "chopsol/contao-matomo-tracker",
 	"description": "Contao 4 Hintergrund-Tracking mit Matomo",
 	"keywords":["contao","bundle","matomo","tracking"],
-	"version": "1.1",
 	"type": "contao-bundle",
 	"homepage": "https://www.chop.de/",
 	"license": "LGPL-3.0-or-later",
@@ -14,8 +13,8 @@
 		}
 	],
 	"require": {
-		"php": ">=7.2",
-		"contao/core-bundle": "^4.9||^4.13",
+		"php": "^7.2 || ^8.0",
+		"contao/core-bundle": "^4.9",
 		"bugbuster/contao-botdetection-bundle":"^1.5.3",
 		"jaybizzle/crawler-detect": "^1.2",
 		"matomo/matomo-php-tracker": "^2.0"

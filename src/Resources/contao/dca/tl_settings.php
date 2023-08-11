@@ -40,6 +40,5 @@ class tl_settings_comatrack extends Backend {
     public function comatrackSettingsLoadCallback($varValue, DataContainer $dc)
     {
 		return str_replace("~~~","\n",$varValue);
-//        return strtr($varValue,'~~~',"\n");
     }
 }
