@@ -294,8 +294,8 @@ class MatomoTracking {
 		// Übersenden der Tracking-Infos an Matomo
 		$response = $matomoTracker->doBulkTrack();
 		// Die Antwort ist normalerweise ein JSON dessen Status wir prüfen können
-		if (!$json = json_decode($response,true) || !isset($json['status']) || $json['status'] != "success") {
-			if ($GLOBALS['COMATRACK_SETTINGS']['debug']) {
+        if ($GLOBALS['COMATRACK_SETTINGS']['debug']) {
+		    if (!$json = json_decode($response,true) || !isset($json['status']) || $json['status'] != "success") {
 				\System::log('Background-Tracking fehlgeschlagen - Server-Antwort: '.$response, __METHOD__, TL_ERROR);
 			}
 		}
